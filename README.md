@@ -1,0 +1,1 @@
+Heavily inspired by the theme of [zine](https://zine-ssg.com)

@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="dynamic-post">
+
+  {{ if .Content }}
+  <div style="margin-bottom: 30px;">
+    {{ .Content }}
+  </div>
+  {{ end }}
+
+  <h2>Latest Posts</h2>
+
+  <div class="dynamic-posts">
+    {{ $posts := where .Site.RegularPages "Section" "post" }}
+    {{ range first 5 $posts }}
+    <article>
+      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+      <p class="small" style="color: #888;">{{ .Date.Format "Jan 02, 2006" }}{{ if .ReadingTime }} • {{ .ReadingTime }} min read{{ end }}</p>
+      <p>{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}</p>
+    </article>
+    {{ else }}
+    <p>No posts published yet.</p>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

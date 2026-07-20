@@ -1,0 +1,12 @@
+# Hugo build outputs
+/public/
+/resources/
+.hugo_build.lock
+
+# Local native binaries/tools
+/bin/
+
+# IDE files
+.vscode/
+.idea/
+.DS_Store

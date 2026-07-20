@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="terms-container">
+  <header style="margin-bottom: 2rem;">
+    <h1 class="post-title" style="text-align: left;">{{ .Title }}</h1>
+  </header>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+    {{ range .Data.Terms.ByCount }}
+    <a href="{{ .Page.Permalink }}" class="social-pill" style="font-size: 1rem; padding: 0.5rem 1rem;">
+      <span>#{{ .Page.Title }}</span>
+      <span style="background: var(--bg-card-hover); padding: 0.1rem 0.5rem; border-radius: 99px; font-size: 0.8rem; color: var(--accent);">{{ .Count }}</span>
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

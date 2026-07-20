@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="dynamic-post">
+  <h1>{{ .Title }}</h1>
+  {{ if .Description }}
+  <p>{{ .Description }}</p>
+  {{ end }}
+
+  <div class="dynamic-posts" style="margin-top: 20px;">
+    {{ range .Paginator.Pages }}
+    <article>
+      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      <p class="small" style="color: #888;">{{ .Date.Format "Jan 02, 2006" }}{{ if .ReadingTime }} • {{ .ReadingTime }} min read{{ end }}</p>
+      <p>{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}</p>
+    </article>
+    {{ else }}
+    <p>No posts found.</p>
+    {{ end }}
+  </div>
+
+  {{ template "_internal/pagination.html" . }}
+</div>
+{{ end }}

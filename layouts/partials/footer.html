@@ -1,0 +1,16 @@
+<footer>
+  <hr />
+  {{ if .Site.Params.social }}
+  <div class="footer-links">
+    {{ range $name, $val := .Site.Params.social }}
+      {{ if reflect.IsMap $val }}
+        <a href="{{ or $val.url $val.URL }}" target="_blank" rel="noopener noreferrer">{{ or $val.name $val.Name ($name | humanize | title) }}</a>
+      {{ else }}
+        <a href="{{ $val }}" target="_blank" rel="noopener noreferrer">{{ $name | humanize | title }}</a>
+      {{ end }}
+    {{ end }}
+  </div>
+  {{ end }}
+  <p class="footer-copy">&copy; {{ now.Format "2006" }} {{ .Site.Params.user | default .Site.Title }}. All rights reserved.</p>
+</footer>
+

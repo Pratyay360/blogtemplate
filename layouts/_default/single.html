@@ -1,0 +1,22 @@
+{{ define "main" }}
+<article class="dynamic-post">
+  <h1>{{ .Title }}</h1>
+  <p class="small" style="color: #888; margin-bottom: 20px;">
+    Published: {{ .Date.Format "January 02, 2006" }}{{ if .ReadingTime }} • {{ .ReadingTime }} min read{{ end }}
+  </p>
+
+  {{ if .Description }}
+  <blockquote style="margin-bottom: 20px;">
+    {{ .Description }}
+  </blockquote>
+  {{ end }}
+
+  {{ .Content }}
+
+  {{ if .Params.tags }}
+  <p class="small" style="margin-top: 30px; color: #888;">
+    Tags: {{ range .Params.tags }}<a href="{{ "tags/" | relURL }}{{ . | urlize }}">#{{ . }}</a> {{ end }}
+  </p>
+  {{ end }}
+</article>
+{{ end }}

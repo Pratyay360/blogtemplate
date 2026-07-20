@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Locale | default "en" }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  {{ partial "header.html" . }}
+  <main data-pagefind-body>
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+  <div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-label="Search">
+    <div class="search-modal-content">
+      <div class="search-modal-header">
+        <h2>Search</h2>
+        <button id="search-close" class="search-close-btn" aria-label="Close search">&times;</button>
+      </div>
+      <div id="search"></div>
+    </div>
+  </div>
+</body>
+</html>

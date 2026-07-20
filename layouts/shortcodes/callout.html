@@ -1,0 +1,8 @@
+<div class="callout callout-{{ .Get "type" | default "info" }}">
+  <div>
+    {{ if .Get "title" }}
+    <strong style="display: block; margin-bottom: 0.25rem; color: var(--text-primary);">{{ .Get "title" }}</strong>
+    {{ end }}
+    <div>{{ .Inner | markdownify }}</div>
+  </div>
+</div>

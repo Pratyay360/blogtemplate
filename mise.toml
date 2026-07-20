@@ -1,0 +1,13 @@
+[tools]
+biome = "latest"
+"github:sass/dart-sass" = "latest"
+go = "latest"
+"go:github.com/mskelton/lorem" = "latest"
+hugo = "latest"
+node = "latest"
+superhtml = "latest"
+[deps]
+git-submodule = { auto = true }
+
+[tasks]
+run = "hugo server "

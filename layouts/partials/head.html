@@ -1,0 +1,13 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} :: {{ .Site.Title }}{{ end }}</title>
+<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .IsHome }}{{ .Site.Params.sitedescription }}{{ else }}{{ .Summary | plainify }}{{ end }}">
+
+<!-- CSS via Hugo Pipes -->
+{{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+
+<!-- Pagefind Search CDN (CSS + JS) -->
+<link href="https://cdn.jsdelivr.net/npm/@pagefind/default-ui@1.5.2/css/ui.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@pagefind/default-ui@1.5.2/ui.js" type="module"></script>
+

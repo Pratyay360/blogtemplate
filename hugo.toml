@@ -1,0 +1,52 @@
+baseURL = 'https://example.com/'
+locale = 'en-us'
+title = 'John Doe'
+
+# Goldmark Markdown Renderer Settings
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "dracula"
+    lineNos = false
+    guessSyntax = true
+
+[pagination]
+  pagerSize = 10
+
+# Navigation Menu
+[menu]
+  [[menu.header]]
+    name = "Home"
+    weight = 1
+    url = "/"
+  [[menu.header]]
+    name = "Articles"
+    weight = 2
+    url = "/post/"
+  [[menu.header]]
+    name = "About"
+    weight = 3
+    url = "/about/"
+  [[menu.header]]
+    name = "Tags"
+    weight = 4
+    url = "/tags/"
+  [[menu.header]]
+    name = "Search"
+    weight = 5
+    url = "#search"
+
+# Site Parameters & Author Info
+[params]
+  user = "John Doe"
+  sitedescription = "Full-stack developer, open-source enthusiast, and writer."
+  avatar = "" # Path to avatar image in /static/ (e.g., /images/avatar.jpg)
+  displayDateFormat = "2006-01-02"
+
+  [params.social]
+    github = "https://github.com/example"
+    twitter = "https://twitter.com/example"
+    linkedin = "https://linkedin.com/in/example"
+    email = "mailto:john@example.com"
