@@ -7,6 +7,7 @@
 {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 
-<!-- Pagefind Search CDN -->
-<link href="https://cdn.jsdelivr.net/npm/pagefind@1.3.2/pagefind-ui.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/pagefind@1.3.2/pagefind-ui.js" type="module"></script>
+<!-- Pagefind Search Assets -->
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js" type="module"></script>
+

@@ -1,4 +1,3 @@
-baseURL = 'https://example.com/'
 locale = 'en-us'
 title = 'John Doe'
 
@@ -44,6 +43,8 @@ title = 'John Doe'
   sitedescription = "Full-stack developer, open-source enthusiast, and writer."
   avatar = "" # Path to avatar image in /static/ (e.g., /images/avatar.jpg)
   displayDateFormat = "2006-01-02"
+  utterancesRepo = "Pratyay360/blogtemplate" # GitHub repository for Utterances comments (e.g., "username/repo")
+  analytics = "https://blogtemplate.goatcounter.com/count"
 
   [params.social]
     github = "https://github.com/example"

@@ -2,6 +2,7 @@
 <html lang="{{ .Site.Language.Locale | default "en" }}">
 <head>
   {{ partial "head.html" . }}
+
 </head>
 <body>
   {{ partial "header.html" . }}
@@ -18,40 +19,11 @@
       <div id="search"></div>
     </div>
   </div>
-  <script type="module">
-    window.addEventListener("DOMContentLoaded", () => {
-      new PagefindUI({ element: "#search", showSubResults: true });
-
-      const modal = document.getElementById("search-modal");
-      const searchInput = document.getElementById("search");
-      const closeBtn = document.getElementById("search-close");
-
-      function openSearch() {
-        modal.classList.add("active");
-        searchInput.querySelector("input")?.focus();
-      }
-
-      function closeSearch() {
-        modal.classList.remove("active");
-        searchInput.querySelector("input").value = "";
-        searchInput.querySelector("input").dispatchEvent(new Event("input"));
-      }
-
-      document.querySelectorAll('a[href="#search"]').forEach(link => {
-        link.addEventListener("click", e => {
-          e.preventDefault();
-          openSearch();
-        });
-      });
-
-      closeBtn.addEventListener("click", closeSearch);
-      modal.addEventListener("click", e => {
-        if (e.target === modal) closeSearch();
-      });
-      document.addEventListener("keydown", e => {
-        if (e.key === "Escape" && modal.classList.contains("active")) closeSearch();
-      });
-    });
-  </script>
+  {{ with .Site.Params.analytics }}
+  <div>
+    <script type="module" data-goatcounter="{{ . }}" async src="//gc.zgo.at/count.js"></script>
+  </div>
+  {{ end }}
 </body>
 </html>
+

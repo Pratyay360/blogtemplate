@@ -5,23 +5,21 @@
 <nav>
   {{ if .Site.Menus.header }}
     {{ range .Site.Menus.header }}
-    <a href="{{ .URL | relURL }}" {{ if eq .URL "#search" }}id="search-toggle"{{ end }}>{{ .Name }}</a>
+    <a href="{{ .URL | relURL }}" {{ if or (eq .URL "#search") (eq .URL "/#search") (hasSuffix .URL "#search") }}id="search-toggle"{{ end }}>{{ .Name }}</a>
+
     {{ end }}
   {{ end }}
 </nav>
 
-<script type="module">
-  import { PagefindUI } from 'https://cdn.jsdelivr.net/npm/@pagefind/default-ui@1.5.2/ui.js';
-
-  window.addEventListener('DOMContentLoaded', () => {
+<script>
+  function initSearch() {
     const searchTarget = document.querySelector('#search');
-    if (searchTarget && !searchTarget.dataset.pagefindInitialized) {
+    if (searchTarget && !searchTarget.dataset.pagefindInitialized && typeof PagefindUI !== 'undefined') {
       searchTarget.dataset.pagefindInitialized = "true";
       new PagefindUI({
         element: "#search",
         showSubResults: true,
         showImages: false,
-        bundlePath: "/pagefind/",
         autofocus: true
       });
     }
@@ -34,27 +32,33 @@
       if (e) e.preventDefault();
       if (searchModal) {
         searchModal.classList.add('active');
-        const input = searchModal.querySelector('input');
-        if (input) input.focus();
+        setTimeout(() => {
+          const input = searchModal.querySelector('input');
+          if (input) input.focus();
+        }, 50);
       }
     }
 
     function closeSearch() {
       if (searchModal) {
         searchModal.classList.remove('active');
+        const input = searchModal.querySelector('input');
+        if (input) {
+          input.value = '';
+          input.dispatchEvent(new Event('input'));
+        }
       }
     }
 
-    if (searchToggle) searchToggle.addEventListener('click', openSearch);
     if (searchClose) searchClose.addEventListener('click', closeSearch);
 
-    document.querySelectorAll('a[href="#search"]').forEach(anchor => {
+    document.querySelectorAll('a[href*="#search"], a[href$="#search"], #search-toggle, .search-toggle-btn').forEach(anchor => {
       anchor.addEventListener('click', openSearch);
     });
 
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeSearch();
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
         openSearch(e);
       }
     });
@@ -64,6 +68,12 @@
         if (e.target === searchModal) closeSearch();
       });
     }
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSearch);
+  } else {
+    initSearch();
+  }
 </script>
 
