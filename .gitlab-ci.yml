@@ -1,0 +1,30 @@
+image: ghcr.io/jdx/mise:latest
+
+stages:
+  - deploy
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+pages:
+  stage: deploy
+
+  before_script:
+    - mise trust mise.toml
+    - mise deps
+
+  script:
+    - hugo --minify
+    - pagefind --site public
+
+  artifacts:
+    paths:
+      - public
+
+  pages:
+    publish: public
+
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+    - if: '$CI_PIPELINE_SOURCE == "web"'
+

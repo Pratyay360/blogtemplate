@@ -1,8 +1,7 @@
 [tools]
 "github:sass/dart-sass" = "latest"
-go = "latest"
 hugo = "latest"
-node = "latest"
+node = "24"
 
 
 [tasks]
