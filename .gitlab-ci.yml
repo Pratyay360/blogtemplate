@@ -14,8 +14,8 @@ pages:
     - mise deps
 
   script:
-    - hugo --minify
-    - pagefind --site public
+    - mise run build
+    - mise run index
 
   artifacts:
     paths:

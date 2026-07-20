@@ -7,3 +7,4 @@ node = "24"
 [tasks]
 start = "hugo server "
 build = "hugo"
+index = "npx pagefind --site public"
