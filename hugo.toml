@@ -1,7 +1,7 @@
+baseUrl= 'https://pratyay360.github.io/blogtemplate' ## your site's domain here ...
 locale = 'en-us'
 title = 'John Doe'
 
-# Goldmark Markdown Renderer Settings
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
