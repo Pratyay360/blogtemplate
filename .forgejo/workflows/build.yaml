@@ -1,29 +1,25 @@
-
-name: Build and Deploy 
+name: Build and Deploy
 
 on:
   push:
     branches:
       - main
+  # workflow_dispatch is supported in newer Forgejo versions,
+  # but can be omitted if not needed.
   workflow_dispatch:
-
-permissions:
-  contents: write
-  pages: write
-  id-token: write
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: docker
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@main
+        uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@main
+        uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: '0.164.0'
 
@@ -31,26 +27,19 @@ jobs:
         run: hugo
 
       - name: Setup Node.js
-        uses: actions/setup-node@main
+        uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '20' # Node 24 is bleeding edge; 20 is the current LTS
 
       - name: Index with Pagefind
         run: npx pagefind --site public
 
-      # - name: Deploy to Cloudflare Pages
-      #   uses: cloudflare/wrangler-action@v3
-      #   with:
-      #     command: pages deploy public --name ##some page name
-      #   env:
-      #     CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-      #     CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@main
+      # To deploy in Forgejo, the most common method is pushing to a
+      # dedicated branch (e.g., 'pages').
+      # This replaces the GitHub-specific upload/deploy steps.
+      - name: Deploy to Pages Branch
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: ./public
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@main
+          github_token: ${{ forgejo.token }}
+          publish_dir: ./public
+          publish_branch: pages
