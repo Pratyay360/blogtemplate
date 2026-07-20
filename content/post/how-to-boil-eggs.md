@@ -1,11 +1,17 @@
 ---
-title: "How to Boil Eggs Perfectly"
-description: "Learn how to quickly and easily boil soft or hard-boiled eggs every single time!"
+title: How to Boil Eggs Perfectly
+description: Learn how to quickly and easily boil soft or hard-boiled eggs every single time!
 date: 2026-06-15T12:00:00Z
-tags: ["cooking", "recipe", "quick-tips"]
-categories: ["Recipes"]
+tags:
+  - quick-tips
+  - recipe
+  - frontmatter
+categories:
+  - Recipes
 author:
-  name: "Jon Calhoun"
+  name: Jon Calhoun
+keywords:
+  - asdfg
 ---
 
 Boiling eggs seems simple, but getting the exact yolk consistency you want requires simple timing.

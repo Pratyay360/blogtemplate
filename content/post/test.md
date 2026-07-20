@@ -1,10 +1,13 @@
 ---
-title: "lorem ipsum"
-description: "lorem ipsum!"
+title: lorem ipsum
+description: lorem ipsum!
 date: 2026-06-15T12:00:00Z
-tags: ["cooking", "lorem", "ipsum"]
-categories: ["lorem"]
+tags:
+  - ipsum
+  - lorem
+categories:
+  - lorem
 author:
-  name: "lorem ipsum"
+  name: lorem ipsum
 ---
 Donec et ultricies mauris, euismod cursus lacus. Duis ultricies ipsum mauris, nec molestie erat dictum quis. Sed tincidunt porta bibendum. Aenean augue quam, vehicula quis quam ut, vehicula gravida diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi hendrerit egestas efficitur. Pellentesque interdum elementum mauris eget vehicula. Pellentesque a dignissim est, viverra efficitur justo. Vivamus molestie vel purus vitae dictum. Proin tempus fringilla dui at cursus. Proin sit amet tincidunt dui, a laoreet leo. Integer at pretium purus. Quisque hendrerit tellus quis augue rhoncus pretium. Praesent ut mi eu magna ullamcorper tincidunt. Donec dignissim egestas tempor. Duis magna eros, vulputate non rutrum vitae, suscipit sit amet orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam mattis vestibulum enim et pharetra. Nulla facilisi. Sed ullamcorper metus neque, ac consectetur ante imperdiet at. Integer sagittis ut ante interdum consectetur. Donec tempus at dolor in gravida. Donec iaculis molestie magna, in semper justo semper non. Suspendisse turpis risus, dapibus vitae elit quis, eleifend facilisis libero. In aliquam dui ante, id iaculis orci congue id. Aenean lobortis orci sem, eget consequat magna interdum nec. Donec vulputate viverra felis quis ullamcorper. Phasellus justo risus, fringilla tincidunt pretium quis, pellentesque non turpis. Vestibulum bibendum vitae libero non ullamcorper. Suspendisse eu libero nisl. Nunc interdum nibh justo, in tristique augue volutpat in. Nunc tristique aliquet est nec rutrum. Curabitur in quam quis turpis hendrerit lobortis. Aliquam fermentum sapien vitae tincidunt consequat. Maecenas eu luctus mi, non mattis diam. Vestibulum molestie eu sem in faucibus. Donec sit amet augue eget dui lacinia aliquam. Etiam aliquam id neque interdum malesuada. Aliquam cursus nec dolor id euismod. Ut elementum, magna at lacinia maximus, nulla ex pretium velit, nec euismod dolor velit et dolor. Sed dapibus odio vitae venenatis tristique. Pellentesque ac orci metus. Phasellus ornare justo nec lacus fringilla, vitae aliquam magna sagittis. Vivamus elementum diam sed vulputate gravida. Aliquam in aliquet nunc. Suspendisse dictum id odio vitae finibus. Ut in posuere tellus, sed pulvinar sapien. Nullam rhoncus quis ex nec rutrum. Nam feugiat cursus orci, eu ultrices nunc rutrum ut. Nullam lacus arcu, dictum et mauris ut, fringilla ultricies metus. Suspendisse vitae mi nec felis tempor facilisis elementum eu augue.
