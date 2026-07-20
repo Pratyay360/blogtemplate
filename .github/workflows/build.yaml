@@ -29,6 +29,14 @@ jobs:
       - name: Build Hugo Site
         run: hugo --gc --minify
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Index with Pagefind
+        run: npx pagefind --site public
+
       # - name: Deploy to Cloudflare Pages
       #   uses: cloudflare/wrangler-action@v3
       #   with:
@@ -37,8 +45,11 @@ jobs:
       #     CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
       #     CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@main
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ github.token }}
-          publish_dir: ./public
+          path: ./public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
