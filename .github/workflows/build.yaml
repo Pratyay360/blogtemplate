@@ -30,7 +30,7 @@ jobs:
         run: hugo --gc --minify
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@main
         with:
           node-version: '24'
 
@@ -46,10 +46,10 @@ jobs:
       #     CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@main
         with:
           path: ./public
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@main
