@@ -1,16 +1,10 @@
 ---
 title: new content
 description: new frontmatter contet
-date: 2026-07-20T14:36:38.138Z
+date: '2026-08-27T22:59'
+draft: true
 tags:
   - frontmatter
-categories:
-  - dev
-author:
-  name: Template author
-keywords:
-  - frontmatter
-slug: content
 ---
 
 
@@ -27,4 +21,3 @@ Morbi ultrices, sapien nec accumsan dignissim, ligula ex porta lectus, in dignis
 Aenean cursus et diam eget gravida. Mauris accumsan, tellus vitae aliquam euismod, orci augue posuere nunc, quis porttitor arcu libero eget dolor. Fusce sit amet augue justo. Mauris vel felis nec ipsum dictum elementum. Praesent vel lectus orci. Nam vitae mattis neque. Aenean at lacinia purus. Phasellus felis magna, tincidunt vel massa non, volutpat rhoncus mauris. Cras eget enim eu mauris convallis tincidunt. In volutpat diam tristique, finibus sapien ut, cursus ante. Duis bibendum vel mi ac scelerisque. Proin porttitor eros eget egestas euismod. Suspendisse bibendum purus venenatis augue porttitor, eget efficitur magna placerat. Etiam auctor risus in mi suscipit, sit amet pharetra quam sollicitudin.
 
 Vivamus ut interdum quam, ut convallis ex. Aenean facilisis nisi ut enim aliquam tincidunt. Duis imperdiet venenatis enim. Nulla volutpat in leo sit amet commodo. Integer volutpat arcu non tellus pulvinar euismod. Morbi quis dignissim orci. Curabitur tincidunt facilisis est ut euismod. Curabitur ullamcorper, nisi eu semper placerat, nisl neque laoreet ex, at efficitur nisi ligula sit amet erat.
-
