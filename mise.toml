@@ -1,10 +1,13 @@
 [tools]
+aube = "latest"
 "github:sass/dart-sass" = "latest"
 hugo = "latest"
 node = "24"
+"npm:surge" = "latest"
 
 
 [tasks]
 start = "hugo server "
 build = "hugo"
 index = "npx pagefind --site public"
+deploy = "surge publish ./public blogtemplate.surge.sh"
