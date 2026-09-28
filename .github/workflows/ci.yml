@@ -20,6 +20,7 @@ jobs:
       - uses: actions/checkout@main
       - run: |
           mise trust
+          mise deps
           mise run build
           mise run index
           mise run deploy
