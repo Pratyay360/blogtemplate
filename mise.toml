@@ -1,5 +1,4 @@
 [tools]
-aube = "latest"
 "github:sass/dart-sass" = "latest"
 hugo = "latest"
 node = "24"
